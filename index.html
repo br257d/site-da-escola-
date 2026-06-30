@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEEM Adelina da Cunha | Parobé/RS - História, Notícias e Informações</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Poppins:wght@500;600&amp;display=swap');
+        
+        :root {
+            --primary: #1e40af;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Poppins', system_ui, sans-serif;
+            font-weight: 600;
+        }
+
+        .school-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+
+        .tab-active {
+            border-bottom: 3px solid #1e40af;
+            color: #1e40af;
+            font-weight: 600;
+        }
+
+        .info-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .nav-link {
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            color: #1e40af;
+        }
+
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(to right, #1e40af, #3b82f6);
+            border-radius: 3px;
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .modern-shadow {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        .tab-content {
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .gallery-img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .school-hero {
+            background-image: linear-gradient(rgba(30, 64, 175, 0.75), rgba(30, 64, 175, 0.65)), url('https://picsum.photos/id/1015/2000/1200');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .fact-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-12 h-12 bg-blue-800 rounded-xl flex items-center justify-center shadow-inner">
+                        <i class="fas fa-graduation-cap text-white text-3xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-2xl tracking-tight text-gray-900">EEEM Adelina da Cunha</h1>
+                        <p class="text-xs text-blue-700 font-medium -mt-1">Parobé • RS</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#inicio" class="nav-link text-gray-600 hover:text-blue-700">Início</a>
+                    <a href="#historia" class="nav-link text-gray-600 hover:text-blue-700">História</a>
+                    <a href="#sobre" class="nav-link text-gray-600 hover:text-blue-700">Sobre a Escola</a>
+                    <a href="#noticias" class="nav-link text-gray-600 hover:text-blue-700">Notícias</a>
+                    <a href="#dados" class="nav-link text-gray-600 hover:text-blue-700">Desempenho</a>
+                    <a href="#galeria" class="nav-link text-gray-600 hover:text-blue-700">Galeria</a>
+                    <a href="#contato" class="nav-link text-gray-600 hover:text-blue-700">Contato</a>
+                </div>
+
+                <div class="flex items-center gap-x-3">
+                    <a href="https://www.facebook.com/escolaadelinadacunha" target="_blank" 
+                       class="px-4 py-2 text-sm font-medium text-blue-700 hover:bg-blue-50 rounded-xl flex items-center gap-x-2 transition-colors">
+                        <i class="fab fa-facebook-f"></i>
+                        <span class="hidden lg:inline">Facebook</span>
+                    </a>
+                    <button onclick="document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-5 py-2.5 bg-blue-800 hover:bg-blue-900 transition-colors text-white text-sm font-semibold rounded-2xl flex items-center gap-x-2 shadow-sm">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contato</span>
+                    </button>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center text-gray-600 hover:text-blue-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b">
+        <div class="px-6 py-4 flex flex-col gap-y-3 text-sm font-medium">
+            <a href="#inicio" class="py-2 text-gray-600">Início</a>
+            <a href="#historia" class="py-2 text-gray-600">História</a>
+            <a href="#sobre" class="py-2 text-gray-600">Sobre a Escola</a>
+            <a href="#noticias" class="py-2 text-gray-600">Notícias</a>
+            <a href="#dados" class="py-2 text-gray-600">Desempenho</a>
+            <a href="#tab-nav" class="py-2 text-gray-600">Galeria (nas abas)</a>
+            <a href="#contato" class="py-2 text-gray-600">Contato</a>
+        </div>
+    </div>
+
+    <!-- Hero / Início -->
+    <section id="inicio" class="school-hero h-[620px] flex items-center relative">
+        <div class="max-w-5xl mx-auto px-6 text-white">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-x-2 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-3xl mb-6 text-sm font-medium">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span>Escola Pública Estadual • Parobé/RS</span>
+                </div>
+                
+                <h2 class="text-6xl md:text-7xl font-bold tracking-tighter leading-none mb-6">
+                    39 anos de<br>educação transformadora
+                </h2>
+                <p class="max-w-lg text-xl text-blue-100 mb-8">
+                    Conheça a trajetória, os números e as conquistas da Escola Estadual de Ensino Médio Adelina da Cunha, 
+                    referência em educação no Vale do Paranhana.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="document.getElementById('historia').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-8 py-4 bg-white text-blue-900 hover:bg-amber-50 transition-all font-semibold rounded-3xl flex items-center gap-x-3 text-lg shadow-xl hover:shadow-2xl">
+                        <span>Explorar a História</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button onclick="document.getElementById('noticias').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-8 py-4 border-2 border-white/70 hover:bg-white/10 transition-all font-semibold rounded-3xl flex items-center gap-x-3 text-lg">
+                        Ver Últimas Notícias
+                    </button>
+                </div>
+                
+                <div class="mt-10 flex items-center gap-x-8 text-sm">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 bg-white/30 rounded-full border border-white/50"></div>
+                        <div class="w-8 h-8 bg-white/30 rounded-full border border-white/50"></div>
+                        <div class="w-8 h-8 bg-white/30 rounded-full border border-white/50"></div>
+                    </div>
+                    <p class="text-blue-100 text-sm">Mais de <span class="font-semibold text-white">230 alunos</span> transformando o futuro</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 right-8 hidden lg:block">
+            <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-4 text-xs text-white max-w-[220px]">
+                <div class="flex items-center gap-x-2 mb-1">
+                    <i class="fas fa-map-marker-alt text-emerald-400"></i>
+                    <span class="font-medium">Rua 25 de Julho, 750 — Nova Parobé</span>
+                </div>
+                <p class="text-blue-100 text-[10px]">Parobé, Rio Grande do Sul</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Facts Bar -->
+    <div class="max-w-7xl mx-auto px-6 -mt-8 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="fact-card rounded-3xl p-5 modern-shadow flex items-center gap-x-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-calendar-alt text-blue-700 text-2xl"></i>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-gray-900">1987</div>
+                    <div class="text-sm text-gray-500 font-medium">Ano de Fundação</div>
+                </div>
+            </div>
+            <div class="fact-card rounded-3xl p-5 modern-shadow flex items-center gap-x-4">
+                <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-users text-emerald-700 text-2xl"></i>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-gray-900">232</div>
+                    <div class="text-sm text-gray-500 font-medium">Alunos Matriculados (2025)</div>
+                </div>
+            </div>
+            <div class="fact-card rounded-3xl p-5 modern-shadow flex items-center gap-x-4">
+                <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-chalkboard-teacher text-amber-700 text-2xl"></i>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-gray-900">19</div>
+                    <div class="text-sm text-gray-500 font-medium">Professores</div>
+                </div>
+            </div>
+            <div class="fact-card rounded-3xl p-5 modern-shadow flex items-center gap-x-4">
+                <div class="w-12 h-12 bg-violet-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-chart-line text-violet-700 text-2xl"></i>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-gray-900">4,3</div>
+                    <div class="text-sm text-gray-500 font-medium">IDEB Ensino Médio (2023)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Abas / Tabs Section -->
+    <section class="max-w-7xl mx-auto px-6 pt-16 pb-8">
+        <div class="flex items-end justify-between mb-8">
+            <div>
+                <h3 class="section-header text-4xl font-bold tracking-tight">Conheça a Escola</h3>
+                <p class="text-gray-600 mt-2">Informações organizadas em abas interativas</p>
+            </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="flex flex-wrap gap-2 border-b border-gray-200 mb-8" id="tab-nav">
+            <button onclick="switchTab(0)" class="tab-btn active px-6 py-3 text-sm font-semibold rounded-t-2xl flex items-center gap-x-2 border-b-3 border-blue-700 text-blue-700" data-tab="0">
+                <i class="fas fa-book-open"></i>
+                <span>História</span>
+            </button>
+            <button onclick="switchTab(1)" class="tab-btn px-6 py-3 text-sm font-semibold text-gray-600 hover:text-gray-900 rounded-t-2xl flex items-center gap-x-2" data-tab="1">
+                <i class="fas fa-building"></i>
+                <span>Sobre &amp; Estrutura</span>
+            </button>
+            <button onclick="switchTab(2)" class="tab-btn px-6 py-3 text-sm font-semibold text-gray-600 hover:text-gray-900 rounded-t-2xl flex items-center gap-x-2" data-tab="2">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Vida Escolar</span>
+            </button>
+            <button onclick="switchTab(3)" class="tab-btn px-6 py-3 text-sm font-semibold text-gray-600 hover:text-gray-900 rounded-t-2xl flex items-center gap-x-2" data-tab="3">
+                <i class="fas fa-chart-bar"></i>
+                <span>Desempenho</span>
+            </button>
+            <button onclick="switchTab(4)" class="tab-btn px-6 py-3 text-sm font-semibold text-gray-600 hover:text-gray-900 rounded-t-2xl flex items-center gap-x-2" data-tab="4">
+                <i class="fas fa-images"></i>
+                <span>Galeria</span>
+            </button>
+            <button onclick="switchTab(5)" class="tab-btn px-6 py-3 text-sm font-semibold text-gray-600 hover:text-gray-900 rounded-t-2xl flex items-center gap-x-2" data-tab="5">
+                <i class="fas fa-lightbulb"></i>
+                <span>Sugestões</span>
+            </button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div id="tab-content-0" class="tab-content">
+            <div class="grid md:grid-cols-12 gap-8">
+                <div class="md:col-span-7">
+                    <h4 class="text-3xl font-bold tracking-tight mb-4">Uma história de dedicação desde 1987</h4>
+                    <div class="prose prose-lg max-w-none text-gray-700">
+                        <p>A <strong>Escola Estadual de Ensino Médio Adelina da Cunha</strong> foi fundada em <strong>21 de dezembro de 1987</strong>, completando mais de 39 anos de atuação na educação pública do Rio Grande do Sul.</p>
+                        
+                        <p>Localizada no bairro Nova Parobé, em Parobé, a escola nasceu para atender à demanda crescente por educação de qualidade na região do Vale do Paranhana. Seu nome homenageia <strong>Adelina da Cunha</strong>, figura importante para a história educacional local (embora detalhes biográficos específicos não estejam amplamente documentados em fontes públicas).</p>
+                        
+                        <p>Ao longo das décadas, a instituição consolidou-se como uma escola de referência, oferecendo tanto o Ensino Fundamental quanto o Ensino Médio. Em 2019, deu um passo importante ao integrar o programa de <strong>Ensino Médio em Tempo Integral</strong>, uma das nove escolas do estado a iniciar essa modalidade naquele ano.</p>
+                    </div>
+                </div>
+                <div class="md:col-span-5">
+                    <div class="bg-white rounded-3xl p-7 border border-gray-100 modern-shadow h-full">
+                        <h5 class="font-semibold text-lg mb-4 flex items-center gap-x-2">
+                            <i class="fas fa-lightbulb text-amber-500"></i> 
+                            <span>Marcos Importantes</span>
+                        </h5>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex gap-x-3">
+                                <span class="font-mono text-xs bg-blue-100 text-blue-700 px-2.5 py-1 rounded font-bold h-fit mt-0.5">1987</span>
+                                <span>Fundação da escola</span>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <span class="font-mono text-xs bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded font-bold h-fit mt-0.5">2019</span>
+                                <span>Início do Ensino Médio em Tempo Integral</span>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <span class="font-mono text-xs bg-violet-100 text-violet-700 px-2.5 py-1 rounded font-bold h-fit mt-0.5">2023</span>
+                                <span>Grande reforma com investimento de R$ 503 mil</span>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <span class="font-mono text-xs bg-rose-100 text-rose-700 px-2.5 py-1 rounded font-bold h-fit mt-0.5">2026</span>
+                                <span>Homenagem a professora com 30 anos de serviço</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-content-1" class="tab-content hidden">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-3xl font-bold tracking-tight mb-5">Localização e Estrutura</h4>
+                    <div class="space-y-4 text-gray-700">
+                        <div class="flex gap-4">
+                            <i class="fas fa-map-marker-alt text-blue-600 mt-1.5 w-5"></i>
+                            <div>
+                                <strong class="block">Endereço</strong>
+                                <span class="text-gray-600">Rua 25 de Julho, 750 — Nova Parobé<br>Parobé/RS • CEP 95630-000</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-phone text-blue-600 mt-1.5 w-5"></i>
+                            <div>
+                                <strong class="block">Contato</strong>
+                                <span class="text-gray-600">(51) 99429-6631 (Secretaria)</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-school text-blue-600 mt-1.5 w-5"></i>
+                            <div>
+                                <strong class="block">Modalidades</strong>
+                                <span class="text-gray-600">Ensino Fundamental e Ensino Médio Regular<br>Ensino Médio em Tempo Integral</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-7 border">
+                    <h5 class="font-bold mb-4">Infraestrutura</h5>
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm">
+                        <div class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-500 w-4"></i> <span>Refeitório reformado</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-500 w-4"></i> <span>Lab. de Informática</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-500 w-4"></i> <span>Lab. de Ciências</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-500 w-4"></i> <span>Quadra de Esportes</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-500 w-4"></i> <span>Biblioteca</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-500 w-4"></i> <span>Acessibilidade</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-500 w-4"></i> <span>Água filtrada</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-500 w-4"></i> <span>Alimentação escolar</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-500 w-4"></i> <span>Sala de Professores</span></div>
+                        <div class="flex items-center gap-x-2"><i class="fas fa-check text-emerald-500 w-4"></i> <span>Atendimento Especial</span></div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4">* Dados do Censo Escolar 2025 (INEP) e reportagens locais.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-content-2" class="tab-content hidden">
+            <div>
+                <h4 class="text-3xl font-bold tracking-tight mb-6">Vida Escolar e Compromisso com os Alunos</h4>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-3xl border">
+                        <div class="text-blue-600 mb-3"><i class="fas fa-clock fa-2x"></i></div>
+                        <h6 class="font-bold mb-2">Tempo Integral</h6>
+                        <p class="text-sm text-gray-600">Desde 2019, o Ensino Médio em Tempo Integral oferece mais tempo para aprofundamento de conteúdos, projetos, reforço e atividades complementares, beneficiando diretamente os estudantes.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border">
+                        <div class="text-emerald-600 mb-3"><i class="fas fa-hands-helping fa-2x"></i></div>
+                        <h6 class="font-bold mb-2">Corpo Docente Dedicado</h6>
+                        <p class="text-sm text-gray-600">Professores com longa trajetória, como a homenageada Profa. Lorilei Silveira de Oliveira (30 anos de serviço em 2026), que considera a escola sua "segunda casa".</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border">
+                        <div class="text-violet-600 mb-3"><i class="fas fa-flask fa-2x"></i></div>
+                        <h6 class="font-bold mb-2">Mostra Científica</h6>
+                        <p class="text-sm text-gray-600">Eventos como a Mostra Científica Adelina da Cunha estimulam a curiosidade, pesquisa e apresentação de projetos pelos alunos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-content-3" class="tab-content hidden">
+            <div>
+                <h4 class="text-3xl font-bold tracking-tight mb-6">Desempenho e Indicadores</h4>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="bg-white rounded-3xl p-7 border mb-6">
+                            <h6 class="uppercase tracking-widest text-xs font-bold text-gray-500 mb-3">IDEB 2023 (INEP)</h6>
+                            <div class="space-y-5">
+                                <div>
+                                    <div class="flex justify-between mb-1.5 text-sm"><span class="font-medium">Anos Finais do Fundamental</span> <span class="font-mono font-bold">4,5</span></div>
+                                    <div class="h-3 bg-gray-100 rounded-full overflow-hidden"><div class="h-3 bg-emerald-500 rounded-full" style="width: 75%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1.5 text-sm"><span class="font-medium">Ensino Médio</span> <span class="font-mono font-bold">4,3</span></div>
+                                    <div class="h-3 bg-gray-100 rounded-full overflow-hidden"><div class="h-3 bg-blue-600 rounded-full" style="width: 72%"></div></div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4">O IDEB combina aprovação e desempenho em avaliações padronizadas. Valores acima de 4,0 são considerados bons para a rede pública.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-3xl p-7 border">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="text-xs uppercase tracking-widest font-bold text-gray-500">ENEM 2019</div>
+                                    <div class="text-4xl font-bold mt-1">494,4</div>
+                                    <div class="text-sm text-gray-500">Média geral (participação 60%)</div>
+                                </div>
+                                <div class="text-right text-xs">
+                                    <div>CH: 501</div>
+                                    <div>CN: 453</div>
+                                    <div>LC: 512</div>
+                                    <div>MT: 512</div>
+                                    <div>Red: 594</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-emerald-50 border border-emerald-100 rounded-3xl p-5 text-sm">
+                            <strong class="text-emerald-700">Destaque:</strong> Taxa de reprovação e abandono próxima de zero nos dados mais recentes do Censo Escolar. A escola mantém foco na permanência e sucesso dos alunos.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nova Aba: Galeria -->
+        <div id="tab-content-4" class="tab-content hidden">
+            <div class="mb-8">
+                <h4 class="text-3xl font-bold tracking-tight mb-2">Galeria de Fotos da Escola</h4>
+                <p class="text-gray-600">Clique nas fotos para ampliar. Todas as imagens são reais da EEEM Adelina da Cunha.</p>
+            </div>
+
+            <!-- Galeria Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4" id="gallery-grid">
+                <!-- Card 1: Fachada -->
+                <div onclick="openGalleryModal(0)" class="group relative overflow-hidden rounded-3xl bg-white shadow cursor-pointer border border-gray-100">
+                    <img src="fotosfachada.jpg" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300" alt="Fachada da Escola Estadual Adelina da Cunha">
+                    <div class="p-3">
+                        <p class="font-semibold text-sm">Fachada da Escola</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Placa -->
+                <div onclick="openGalleryModal(1)" class="group relative overflow-hidden rounded-3xl bg-white shadow cursor-pointer border border-gray-100">
+                    <img src="fotosplaca.jpg" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300" alt="Placa da Escola">
+                    <div class="p-3">
+                        <p class="font-semibold text-sm">Placa da Escola</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Corredor de cima -->
+                <div onclick="openGalleryModal(2)" class="group relative overflow-hidden rounded-3xl bg-white shadow cursor-pointer border border-gray-100">
+                    <img src="fotoscorredor-cima.jpg" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300" alt="Corredor da escola visto de cima">
+                    <div class="p-3">
+                        <p class="font-semibold text-sm">Corredor visto de cima</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Corredor de baixo -->
+                <div onclick="openGalleryModal(3)" class="group relative overflow-hidden rounded-3xl bg-white shadow cursor-pointer border border-gray-100">
+                    <img src="fotoscorredor-baixo.jpg" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300" alt="Corredor da escola visto de baixo">
+                    <div class="p-3">
+                        <p class="font-semibold text-sm">Corredor visto de baixo</p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Laguinho -->
+                <div onclick="openGalleryModal(4)" class="group relative overflow-hidden rounded-3xl bg-white shadow cursor-pointer border border-gray-100">
+                    <img src="fotoslaguinho.jpg" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300" alt="Laguinho da escola">
+                    <div class="p-3">
+                        <p class="font-semibold text-sm">Laguinho da Escola</p>
+                    </div>
+                </div>
+
+                <!-- Card 6: Interior -->
+                <div onclick="openGalleryModal(5)" class="group relative overflow-hidden rounded-3xl bg-white shadow cursor-pointer border border-gray-100">
+                    <img src="fotosinterior.jpg" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300" alt="Interior da escola">
+                    <div class="p-3">
+                        <p class="font-semibold text-sm">Interior da Escola</p>
+                    </div>
+                </div>
+
+                <!-- Card 7: Quadra -->
+                <div onclick="openGalleryModal(6)" class="group relative overflow-hidden rounded-3xl bg-white shadow cursor-pointer border border-gray-100">
+                    <img src="fotosquadra.jpg" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300" alt="Quadra da escola">
+                    <div class="p-3">
+                        <p class="font-semibold text-sm">Quadra da Escola</p>
+                    </div>
+                </div>
+
+                <!-- Card 8: Objetivos -->
+                <div onclick="openGalleryModal(7)" class="group relative overflow-hidden rounded-3xl bg-white shadow cursor-pointer border border-gray-100">
+                    <img src="fotosobjetivos.jpg" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300" alt="Objetivos da escola">
+                    <div class="p-3">
+                        <p class="font-semibold text-sm">Objetivos da Escola</p>
+                    </div>
+                </div>
+
+                <!-- Card 9: Turma do programador -->
+                <div onclick="openGalleryModal(8)" class="group relative overflow-hidden rounded-3xl bg-white shadow cursor-pointer border border-gray-100">
+                    <img src="fotosturma.jpg" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300" alt="Turma que habita nosso sofrido programador">
+                    <div class="p-3">
+                        <p class="font-semibold text-sm">Turma do Programador 😅</p>
+                    </div>
+                </div>
+
+                <!-- Card 10: Grupo fotógrafo, programador e professora -->
+                <div onclick="openGalleryModal(9)" class="group relative overflow-hidden rounded-3xl bg-white shadow cursor-pointer border border-gray-100">
+                    <img src="fotosgrupo.jpg" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300" alt="Grupo: fotógrafo, programador e professora">
+                    <div class="p-3">
+                        <p class="font-semibold text-sm">Grupo: Fotógrafo, Programador e Professora</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-xs text-gray-500 mt-6">Fotos gentilmente cedidas para este projeto • Toque/ clique para ver em tamanho maior</p>
+        </div>
+
+        <!-- Nova Aba: Sugestões -->
+        <div id="tab-content-5" class="tab-content hidden">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-8">
+                    <h4 class="text-3xl font-bold tracking-tight mb-2">Sugestões e Feedback</h4>
+                    <p class="text-gray-600">Quer ajudar a melhorar o site? Envie sua ideia, sugestão de nova seção, correção ou elogio. Sua opinião é muito importante!</p>
+                </div>
+
+                <form id="suggestion-form" onsubmit="sendSuggestion(event)" class="bg-white rounded-3xl border border-gray-200 p-8 modern-shadow">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Seu Nome (opcional)</label>
+                            <input type="text" id="sug-nome" class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:border-blue-600 transition-colors" placeholder="Seu nome">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Seu E-mail (opcional)</label>
+                            <input type="email" id="sug-email" class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:border-blue-600 transition-colors" placeholder="seu@email.com">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Tipo de Sugestão</label>
+                        <select id="sug-tipo" class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:border-blue-600 transition-colors bg-white">
+                            <option value="Melhoria no site">Melhoria no site (design, navegação, etc.)</option>
+                            <option value="Nova seção ou aba">Nova seção ou aba</option>
+                            <option value="Correção de informação">Correção de informação ou dado</option>
+                            <option value="Elogio">Elogio / Feedback positivo</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Sua Sugestão / Mensagem *</label>
+                        <textarea id="sug-mensagem" rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:border-blue-600 transition-colors resize-y" placeholder="Escreva aqui sua sugestão, ideia ou feedback..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 active:bg-blue-900 transition-colors text-white font-semibold py-4 rounded-3xl flex items-center justify-center gap-x-3 text-lg">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Enviar Sugestão por E-mail</span>
+                    </button>
+
+                    <p class="text-center text-xs text-gray-500 mt-4">Sua sugestão será aberta no seu cliente de e-mail para envio ao desenvolvedor (brunodv004@gmail.com).</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notícias Section -->
+    <section id="noticias" class="bg-white border-t border-b py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between mb-10">
+                <div>
+                    <h3 class="section-header text-4xl font-bold tracking-tight">Notícias e Destaques Recentes</h3>
+                    <p class="text-gray-600 mt-1">Acompanhe os principais acontecimentos da escola</p>
+                </div>
+                <a href="https://www.facebook.com/escolaadelinadacunha" target="_blank" class="hidden md:flex items-center text-sm font-medium text-blue-700 hover:text-blue-800">
+                    Ver mais no Facebook <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- News Card 1 -->
+                <div class="border rounded-3xl overflow-hidden modern-shadow bg-white">
+                    <div class="h-2 bg-gradient-to-r from-blue-700 to-blue-500"></div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-x-2 text-xs mb-3">
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">AGOSTO 2023</span>
+                            <span class="text-gray-400">•</span>
+                            <span class="text-gray-500">Reforma</span>
+                        </div>
+                        <h5 class="font-bold text-xl leading-tight mb-3">Investimento de R$ 503 mil em melhorias estruturais</h5>
+                        <p class="text-gray-600 text-[15px] line-clamp-3 mb-4">A escola recebeu reforma completa incluindo cerca de 1.000 metros de muro, substituição da rede elétrica e iluminação, reforma total do refeitório (piso, forro e mobiliário) e área de serviço (cozinha e despensa). Parte do programa estadual "Lição de Casa".</p>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <i class="fas fa-user mr-1.5"></i>
+                            <span>Visita do Dep. Joel Wilhelm e Diretora Ana Lira</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Card 2 -->
+                <div class="border rounded-3xl overflow-hidden modern-shadow bg-white">
+                    <div class="h-2 bg-gradient-to-r from-emerald-600 to-teal-500"></div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-x-2 text-xs mb-3">
+                            <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-medium">MAIO 2026</span>
+                            <span class="text-gray-400">•</span>
+                            <span class="text-gray-500">Homenagem</span>
+                        </div>
+                        <h5 class="font-bold text-xl leading-tight mb-3">Professora Lorilei Silveira de Oliveira é homenageada por 30 anos de dedicação</h5>
+                        <p class="text-gray-600 text-[15px] line-clamp-3 mb-4">"Sinto a escola como minha segunda casa. Grande parte da minha vida foi construída aqui." — Profa. Lorilei, que atua na escola desde 14 de maio de 1996. Colegas organizaram cerimônia especial com certificado de reconhecimento.</p>
+                        <div class="text-xs text-emerald-600 font-medium">“A educação sempre foi mais do que uma profissão para mim: é uma missão de vida.”</div>
+                    </div>
+                </div>
+
+                <!-- News Card 3 -->
+                <div class="border rounded-3xl overflow-hidden modern-shadow bg-white">
+                    <div class="h-2 bg-gradient-to-r from-violet-600 to-purple-500"></div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-x-2 text-xs mb-3">
+                            <span class="bg-violet-100 text-violet-700 px-3 py-1 rounded-full font-medium">2019</span>
+                            <span class="text-gray-400">•</span>
+                            <span class="text-gray-500">Programa Estadual</span>
+                        </div>
+                        <h5 class="font-bold text-xl leading-tight mb-3">Início do Ensino Médio em Tempo Integral</h5>
+                        <p class="text-gray-600 text-[15px] line-clamp-3 mb-4">A escola foi uma das nove instituições do Rio Grande do Sul selecionadas para implantar o Ensino Médio em Tempo Integral no início do ano letivo de 2019, ampliando significativamente as oportunidades de aprendizado para os estudantes.</p>
+                        <div class="text-xs text-gray-500">Benefício direto para centenas de alunos da região.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <!-- Seção antiga de galeria substituída pela nova aba interativa -->
+    <section id="galeria" class="max-w-7xl mx-auto px-6 py-12 bg-gray-50 border-t">
+        <div class="text-center">
+            <h3 class="text-2xl font-bold tracking-tight mb-3">📸 Galeria completa agora está nas abas!</h3>
+            <p class="text-gray-600 max-w-md mx-auto">Abra a aba <strong>"Galeria"</strong> no topo (nas abas interativas) para ver as 10 fotos reais da escola com visualizador em tamanho grande, setas e teclado.</p>
+            <button onclick="document.getElementById('tab-nav').scrollIntoView({ behavior: 'smooth' }); setTimeout(() => switchTab(4), 600)" 
+                    class="mt-6 px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-3xl flex items-center gap-x-2 mx-auto transition-colors">
+                <i class="fas fa-images"></i>
+                <span>Ir para a Galeria agora</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="bg-gradient-to-br from-gray-900 to-slate-950 text-white py-16">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-x-16 gap-y-10">
+                <div>
+                    <h3 class="text-4xl font-bold tracking-tight mb-4">Entre em contato</h3>
+                    <p class="text-gray-400 max-w-md">A escola está aberta para a comunidade. Para matrículas, visitas ou informações, utilize os canais oficiais.</p>
+                    
+                    <div class="mt-8 space-y-4 text-sm">
+                        <div class="flex items-start gap-x-4">
+                            <i class="fas fa-map-marker-alt mt-1 text-blue-400 w-5"></i>
+                            <div>
+                                <div class="font-medium">Endereço</div>
+                                <div class="text-gray-400">Rua 25 de Julho, 750<br>Nova Parobé, Parobé - RS<br>CEP 95630-000</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-x-4">
+                            <i class="fas fa-phone mt-1 text-blue-400 w-5"></i>
+                            <div>
+                                <div class="font-medium">Telefone</div>
+                                <div class="text-gray-400">(51) 99429-6631</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-x-4">
+                            <i class="fab fa-facebook-f mt-1 text-blue-400 w-5"></i>
+                            <div>
+                                <div class="font-medium">Redes Sociais</div>
+                                <a href="https://www.facebook.com/escolaadelinadacunha" target="_blank" class="text-blue-400 hover:underline">facebook.com/escolaadelinadacunha</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Formulário de Contato Simulado -->
+                <div class="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8">
+                    <h5 class="font-semibold text-xl mb-6">Envie uma mensagem</h5>
+                    <form id="contact-form" onsubmit="submitContactForm(event)">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-xs tracking-widest text-gray-400 block mb-1.5">SEU NOME</label>
+                                <input type="text" id="nome" required class="w-full bg-white/10 border border-white/20 focus:border-blue-400 transition-colors rounded-2xl px-4 py-3 text-sm placeholder:text-gray-400" placeholder="Nome completo">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-xs tracking-widest text-gray-400 block mb-1.5">E-MAIL</label>
+                                    <input type="email" id="email" required class="w-full bg-white/10 border border-white/20 focus:border-blue-400 transition-colors rounded-2xl px-4 py-3 text-sm placeholder:text-gray-400" placeholder="seu@email.com">
+                                </div>
+                                <div>
+                                    <label class="text-xs tracking-widest text-gray-400 block mb-1.5">ASSUNTO</label>
+                                    <select id="assunto" class="w-full bg-white/10 border border-white/20 focus:border-blue-400 transition-colors rounded-2xl px-4 py-3 text-sm text-white">
+                                        <option value="Matrícula">Matrícula / Vagas</option>
+                                        <option value="Visita">Agendar Visita</option>
+                                        <option value="Informações">Informações Gerais</option>
+                                        <option value="Elogio">Elogio / Sugestão</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-xs tracking-widest text-gray-400 block mb-1.5">MENSAGEM</label>
+                                <textarea id="mensagem" rows="4" required class="w-full bg-white/10 border border-white/20 focus:border-blue-400 transition-colors rounded-3xl px-4 py-3 text-sm placeholder:text-gray-400 resize-y" placeholder="Escreva sua mensagem aqui..."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="mt-6 w-full bg-white hover:bg-gray-100 active:bg-gray-200 transition-colors text-gray-900 font-semibold py-3.5 rounded-3xl flex items-center justify-center gap-x-2">
+                            <span>Enviar Mensagem</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <p class="text-[10px] text-center text-gray-500 mt-3">Este formulário é simulado para demonstração. Em produção, enviaria para a secretaria da escola.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-400 py-8 text-xs">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-y-3 text-center md:text-left">
+                <div>
+                    Site informativo criado por Bruno Duarte Vieira em 2026 • Baseado em fontes públicas (INEP/QEdu, Secretaria de Educação RS, reportagens locais e redes sociais da escola)
+                </div>
+                <div class="flex items-center gap-x-5">
+                    <span>EEEM Adelina da Cunha — Parobé/RS</span>
+                    <span class="hidden md:inline">•</span>
+                    <span>CNPJ: 92.402.098/0001-21</span>
+                </div>
+            </div>
+            <div class="text-center mt-6 text-[10px] text-gray-600">
+                Este site foi desenvolvido por Bruno como projeto educativo e não é o site oficial da escola. Para informações oficiais, entre em contato diretamente com a instituição.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal / Lightbox da Galeria -->
+    <div id="gallery-modal" class="hidden fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4" onclick="if (event.target.id === 'gallery-modal') closeGalleryModal()">
+        <div class="relative max-w-5xl w-full" onclick="event.stopImmediatePropagation()">
+            <!-- Close button -->
+            <button onclick="closeGalleryModal()" class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10">
+                <i class="fas fa-times text-3xl"></i>
+            </button>
+
+            <!-- Image container -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-2xl">
+                <img id="modal-image" class="w-full max-h-[75vh] object-contain bg-gray-900" alt="Foto ampliada da galeria">
+                
+                <div class="p-5 bg-white flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <p id="modal-caption" class="font-semibold text-xl text-gray-900"></p>
+                        <p id="modal-counter" class="text-sm text-gray-500 mt-0.5"></p>
+                    </div>
+                    
+                    <!-- Navigation -->
+                    <div class="flex items-center gap-x-3">
+                        <button onclick="prevGalleryImage()" class="px-5 py-2.5 bg-gray-100 hover:bg-gray-200 active:bg-gray-300 transition-colors rounded-2xl flex items-center gap-x-2 text-sm font-medium">
+                            <i class="fas fa-chevron-left"></i>
+                            <span>Anterior</span>
+                        </button>
+                        <button onclick="nextGalleryImage()" class="px-5 py-2.5 bg-blue-700 hover:bg-blue-800 active:bg-blue-900 transition-colors text-white rounded-2xl flex items-center gap-x-2 text-sm font-medium">
+                            <span>Próxima</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#1e40af');
+        }
+
+        // Mobile menu toggle
+        function setupMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                const icon = btn.querySelector('i');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+            
+            // Close menu when clicking links
+            const links = menu.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    btn.querySelector('i').classList.remove('fa-times');
+                    btn.querySelector('i').classList.add('fa-bars');
+                });
+            });
+        }
+
+        // Tab System
+        let currentTab = 0;
+        
+        function switchTab(tabIndex) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'text-blue-700', 'border-b-3', 'border-blue-700');
+                btn.classList.add('text-gray-600');
+            });
+            
+            // Show selected content
+            const contentEl = document.getElementById(`tab-content-${tabIndex}`);
+            if (contentEl) contentEl.classList.remove('hidden');
+            
+            // Activate button
+            const activeBtn = document.querySelector(`.tab-btn[data-tab="${tabIndex}"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active', 'text-blue-700', 'border-b-3', 'border-blue-700');
+                activeBtn.classList.remove('text-gray-600');
+            }
+            
+            currentTab = tabIndex;
+        }
+
+        // Contact form handler
+        function submitContactForm(e) {
+            e.preventDefault();
+            
+            const form = document.getElementById('contact-form');
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = `<span>Enviando...</span> <i class="fas fa-spinner fa-spin"></i>`;
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = `<span>Mensagem enviada com sucesso!</span> <i class="fas fa-check"></i>`;
+                btn.classList.add('!bg-emerald-600', '!text-white');
+                
+                setTimeout(() => {
+                    alert('Obrigado! Sua mensagem foi registrada (simulação). Em um site real, ela seria enviada para a secretaria da escola.');
+                    form.reset();
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    btn.classList.remove('!bg-emerald-600', '!text-white');
+                }, 2200);
+            }, 1600);
+        }
+
+        // Smooth scroll for nav links
+        function setupSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Keyboard accessibility for tabs
+        function setupKeyboardNav() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach((btn, index) => {
+                btn.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+                btn.setAttribute('role', 'tab');
+                
+                btn.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight') {
+                        const next = (index + 1) % tabButtons.length;
+                        tabButtons[next].click();
+                        tabButtons[next].focus();
+                    }
+                    if (e.key === 'ArrowLeft') {
+                        const prev = (index - 1 + tabButtons.length) % tabButtons.length;
+                        tabButtons[prev].click();
+                        tabButtons[prev].focus();
+                    }
+                });
+            });
+        }
+
+        // Initialize everything
+        function initializeSite() {
+            initializeTailwind();
+            setupMobileMenu();
+            setupSmoothScroll();
+            setupKeyboardNav();
+            setupGallery();
+            
+            // Show first tab by default
+            const firstContent = document.getElementById('tab-content-0');
+            if (firstContent) firstContent.classList.remove('hidden');
+            
+            // Optional: Auto-rotate a subtle hero animation hint (static is fine)
+            console.log('%c[Site] Escola Adelina da Cunha - Site informativo carregado com sucesso.', 'color:#64748b');
+            
+            // Easter egg: Press "?" to highlight stats
+            document.addEventListener('keydown', function(e) {
+                if (e.key === '?') {
+                    const cards = document.querySelectorAll('.fact-card');
+                    cards.forEach((card, i) => {
+                        setTimeout(() => {
+                            card.style.transform = 'scale(1.03)';
+                            setTimeout(() => {
+                                card.style.transform = '';
+                            }, 280);
+                        }, i * 80);
+                    });
+                }
+            });
+        }
+
+        // ==================== GALERIA DE FOTOS ====================
+        const galleryPhotos = [
+            { src: "fotosfachada.jpg", caption: "Fachada da Escola" },
+            { src: "fotosplaca.jpg", caption: "Placa da Escola" },
+            { src: "fotoscorredor-cima.jpg", caption: "Corredor visto de cima" },
+            { src: "fotoscorredor-baixo.jpg", caption: "Corredor visto de baixo" },
+            { src: "fotoslaguinho.jpg", caption: "Laguinho da Escola" },
+            { src: "fotosinterior.jpg", caption: "Interior da Escola" },
+            { src: "fotosquadra.jpg", caption: "Quadra da Escola" },
+            { src: "fotosobjetivos.jpg", caption: "Objetivos da Escola" },
+            { src: "fotosturma.jpg", caption: "Turma que habita nosso sofrido programador 😅" },
+            { src: "fotosgrupo.jpg", caption: "Grupo: Fotógrafo, Programador e Professora" }
+        ];
+
+        let currentGalleryIndex = 0;
+
+        function openGalleryModal(index) {
+            currentGalleryIndex = index;
+            const modal = document.getElementById('gallery-modal');
+            const img = document.getElementById('modal-image');
+            const caption = document.getElementById('modal-caption');
+            const counter = document.getElementById('modal-counter');
+
+            img.src = galleryPhotos[index].src;
+            caption.textContent = galleryPhotos[index].caption;
+            counter.textContent = `${index + 1} / ${galleryPhotos.length}`;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Add keyboard support
+            document.addEventListener('keydown', handleGalleryKeydown);
+        }
+
+        function closeGalleryModal() {
+            const modal = document.getElementById('gallery-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            document.removeEventListener('keydown', handleGalleryKeydown);
+        }
+
+        function nextGalleryImage() {
+            currentGalleryIndex = (currentGalleryIndex + 1) % galleryPhotos.length;
+            updateModalImage();
+        }
+
+        function prevGalleryImage() {
+            currentGalleryIndex = (currentGalleryIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
+            updateModalImage();
+        }
+
+        function updateModalImage() {
+            const img = document.getElementById('modal-image');
+            const caption = document.getElementById('modal-caption');
+            const counter = document.getElementById('modal-counter');
+
+            img.src = galleryPhotos[currentGalleryIndex].src;
+            caption.textContent = galleryPhotos[currentGalleryIndex].caption;
+            counter.textContent = `${currentGalleryIndex + 1} / ${galleryPhotos.length}`;
+        }
+
+        function handleGalleryKeydown(e) {
+            if (e.key === 'Escape') {
+                closeGalleryModal();
+            } else if (e.key === 'ArrowRight') {
+                nextGalleryImage();
+            } else if (e.key === 'ArrowLeft') {
+                prevGalleryImage();
+            }
+        }
+
+        function setupGallery() {
+            // Optional: preload first few images
+            console.log('%c[Galeria] Galeria com 10 fotos carregada com sucesso.', 'color:#64748b');
+        }
+
+        // Função para enviar sugestão via mailto
+        function sendSuggestion(e) {
+            e.preventDefault();
+
+            const nome = document.getElementById('sug-nome').value.trim() || 'Anônimo';
+            const email = document.getElementById('sug-email').value.trim() || 'Não informado';
+            const tipo = document.getElementById('sug-tipo').value;
+            const mensagem = document.getElementById('sug-mensagem').value.trim();
+
+            if (!mensagem) {
+                alert('Por favor, escreva sua sugestão!');
+                return;
+            }
+
+            const subject = encodeURIComponent(`Sugestão para o Site EEEM Adelina da Cunha - ${tipo}`);
+            const body = encodeURIComponent(
+                `Nome: ${nome}\n` +
+                `E-mail: ${email}\n` +
+                `Tipo: ${tipo}\n\n` +
+                `Mensagem / Sugestão:\n${mensagem}\n\n` +
+                `---\nEnviado pelo site criado por Bruno Duarte Vieira (2026)`
+            );
+
+            const mailtoLink = `mailto:brunodv004@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Abre o cliente de e-mail do usuário
+            window.location.href = mailtoLink;
+
+            // Feedback visual
+            const form = document.getElementById('suggestion-form');
+            const originalButtonText = form.querySelector('button').innerHTML;
+            
+            form.querySelector('button').innerHTML = `<span>Sugestão enviada! Abra seu e-mail para confirmar.</span>`;
+            form.querySelector('button').disabled = true;
+
+            setTimeout(() => {
+                alert('Obrigado pela sugestão! Seu cliente de e-mail deve ter aberto com a mensagem pronta. Basta enviar.');
+                form.reset();
+                form.querySelector('button').innerHTML = originalButtonText;
+                form.querySelector('button').disabled = false;
+            }, 2500);
+        }
+
+        // Boot the site
+        window.onload = initializeSite;
+    </script>
+</body>
+</html>
